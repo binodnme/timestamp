@@ -1,5 +1,6 @@
 import com.kaala.timestamp.DayTimeStamp;
 import com.kaala.timestamp.MonthTimeStamp;
+import com.kaala.timestamp.WeekTimeStamp;
 import com.kaala.timestamp.YearTimeStamp;
 
 import java.util.Date;
@@ -10,8 +11,9 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args){
-//        System.out.println(YearTimeStamp.getStartAndEndTimeStamp(new Date()));
-//        System.out.println(DayTimeStamp.getStartAndEndTimeStamp(new Date()));
+        System.out.println(YearTimeStamp.getStartAndEndTimeStamp(new Date()));
+        System.out.println(DayTimeStamp.getStartAndEndTimeStamp(new Date()));
         System.out.println(MonthTimeStamp.getStartAndEndTimeStamp(new Date()));
+        System.out.println(WeekTimeStamp.getStartAndEndTimeStamp(new Date()));
     }
 }
