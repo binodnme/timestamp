@@ -10,23 +10,37 @@ import java.util.List;
  */
 public class DayTimeStamp {
 
-    public static List<Long> getStartTimeStamp(Date date) {
+    public static List<Long> getStartAndEndTimeStamp(Date date) {
         List<Long> startAndEndTimestamp = new ArrayList<>();
 
+        long startTimeStamp = getStartTimeStamp(date);
+        long endTimeStamp = getEndTimeStamp(date);
+
+        startAndEndTimestamp.add(startTimeStamp);
+        startAndEndTimestamp.add(endTimeStamp);
+
+        return startAndEndTimestamp;
+    }
+
+    public static long getStartTimeStamp(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
-        long startTimeStamp = calendar.getTimeInMillis();
+        return calendar.getTimeInMillis();
 
+    }
+
+    public static long getEndTimeStamp(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
         calendar.add(Calendar.DAY_OF_MONTH, 1);
-        long endTimeStamp = calendar.getTimeInMillis();
-
-        startAndEndTimestamp.add(startTimeStamp);
-        startAndEndTimestamp.add(endTimeStamp);
-
-        return startAndEndTimestamp;
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTimeInMillis();
     }
 }
