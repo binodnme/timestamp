@@ -9,25 +9,21 @@ import java.util.List;
  * Created by kaala on 6/23/16.
  */
 public class MonthTimeStamp {
-    public static List<Long> getStartAndEndTimeStamp(Date date){
-        List<Long> list = new ArrayList<>();
-
-        long startTimeStamp = getStartTimeStamp(date);
-        long endTimeStamp = getEndTimeStamp(date);
-
-        list.add(startTimeStamp);
-        list.add(endTimeStamp);
+    public static List<Date> getStartAndEndDate(Date date){
+        List<Date> list = new ArrayList<>();
+        list.add(getStartTimeStamp(date));
+        list.add(getEndTimeStamp(date));
         return list;
     }
 
-    public static long getStartTimeStamp(Date date){
+    public static Date getStartTimeStamp(Date date){
         Date startDate = getFirstDayOfMonth(date);
-        return DayTimeStamp.getStartTimeStamp(startDate);
+        return DayTimeStamp.getStartDate(startDate);
     }
 
-    public static long getEndTimeStamp(Date date){
+    public static Date getEndTimeStamp(Date date){
         Date startDate = getLastDayOfMonth(date);
-        return DayTimeStamp.getEndTimeStamp(startDate);
+        return DayTimeStamp.getEndDate(startDate);
     }
 
     public static Date getFirstDayOfMonth(Date date) {

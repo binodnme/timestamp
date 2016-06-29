@@ -4,16 +4,15 @@ import com.kaala.timestamp.WeekTimeStamp;
 import com.kaala.timestamp.YearTimeStamp;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by kaala on 6/23/16.
  */
 public class Main {
     public static void main(String[] args){
-        System.out.println(YearTimeStamp.getStartAndEndTimeStamp(new Date()));
-        System.out.println(DayTimeStamp.getStartAndEndTimeStamp(new Date()));
-        System.out.println(MonthTimeStamp.getStartAndEndTimeStamp(new Date()));
-        System.out.println(WeekTimeStamp.getStartAndEndTimeStamp(new Date()));
+        System.out.println(YearTimeStamp.getStartAndEndDate(new Date()));
+        System.out.println(MonthTimeStamp.getStartAndEndDate(new Date()));
+        System.out.println(WeekTimeStamp.getStartAndEndDate(new Date()));
+        System.out.println(DayTimeStamp.getStartAndEndDate(new Date()));
     }
 }

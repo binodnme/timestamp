@@ -9,27 +9,22 @@ import java.util.List;
  * Created by kaala on 6/23/16.
  */
 public class YearTimeStamp {
-    public static List<Long> getStartAndEndTimeStamp(Date date) {
-        List<Long> list = new ArrayList<>();
-
-        long startTimeStamp = getStartTimeStamp(date);
-        long endTimeStamp = getEndTimeStamp(date);
-
-        list.add(startTimeStamp);
-        list.add(endTimeStamp);
+    public static List<Date> getStartAndEndDate(Date date) {
+        List<Date> list = new ArrayList<>();
+        list.add(getStartDate(date));
+        list.add(getEndDate(date));
         return list;
     }
 
-    public static long getStartTimeStamp(Date date){
+    public static Date getStartDate(Date date){
         Date startDate = getFirstDayOfYear(date);
-        return DayTimeStamp.getStartTimeStamp(startDate);
+        return DayTimeStamp.getStartDate(startDate);
     }
 
-    public static long getEndTimeStamp(Date date){
+    public static Date getEndDate(Date date){
         Date startDate = getLastDayOfYear(date);
-        return DayTimeStamp.getEndTimeStamp(startDate);
+        return DayTimeStamp.getEndDate(startDate);
     }
-
 
     public static Date getFirstDayOfYear(Date date) {
         Calendar calendar = Calendar.getInstance();
